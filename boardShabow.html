@@ -3,14 +3,16 @@
 <head>
 <link rel="stylesheet" type="text/css" href="./css/styles.css">    
 <style>
-       
+    .back{
+        color: azure;
+    }   
 
 </style>
 
 </head>
 <body>
         <div class="container">
-           <h1>점심 게시판</h1> 
+            <button class="back"><a href ="./blog.html">돌아가기</a></button> <h1>점심 게시판</h1> 
            <ul class="post-list">
             <!--게시물 목록 작성하는 곳-->
                 <li class="post">
@@ -39,7 +41,7 @@
                             <button onclick="joinbutton()">회원가입 하기</button>
                             <p id="joinCheck">회원가입을 하는 중입니다.</p>
 
-
+                            
 
                         </form>
                         <script>
@@ -56,9 +58,7 @@
                                 document.getElementById("joinCheck").innerHTML = txt;
                             }
                         </script>
-
-
-
+                       
 
 
 

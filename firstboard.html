@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .comment{
+        border : 1px solid
+    }
+    .body{
+        background-color: rgb(146, 140, 132);
+        padding: 200px;
+        border : 1px solid
+    }
+</style>
+</head>
+
+  <body>
+    <h1>게시글 작성하기</h1>
+    <section>
+        <h1>게시판 입니다.</h1>
+            <div class="comment">
+            <input id="commentInput" placeholder="게시글작성하기">
+            <button onclick="addComment()">작성완료</button>
+            <div id="comments">
+                <!--댓글이 표시될 장소-->
+            </div>
+        </div>
+    </section>
+    </body>
+    <foot></foot>
+    <script>
+        function addComment(){
+            const commentInput = document.getElementById("commentInput");
+            const commentText = commentInput.value;
+            if(commentText.trim() === ""){
+                alert("댓글을 작성해주세요.")
+                return
+            }
+
+            const commentsBox = document.getElementById("comments");
+            const commentDIV = document.createElement("div");
+            commentDIV.className = "comment";
+            commentDIV.textContent = commentText;
+            commentsBox.appendChild(commentDIV);
+            commentInput.value="";
+        }
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
