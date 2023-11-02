@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>물건 계산하기</title>
+    </head>
+    <body>
+        <div>
+            <label for ="item"> 상품명: </label>
+            <input type="text" id="item" placeholder="물건 이름">
+            <label for = "price">가격 : </label>
+            <input type="number" id="price" placeholder="가격" value="0">
+            <label for="count">갯수 :</label>
+            <input type="number" id="count" placeholder="갯수" value="1">
+            <button onclick="addItem()">추가</button>
+        </div>
+        <div>
+            <ul id="itemList">
+
+            </ul>
+        </div>
+        <div>
+            <p>총 가격: <span id="totalPrice">0</span>원</p>
+        </div>
+        <script>
+            let total = 0;
+
+            function addItem(){
+                const itemInput = document.getElementById("item");
+                const priceInput = document.getElementById("price");
+                const countInput = document.getElementById("count");
+                const itemList = document.getElementById("itemList");
+                const totalPrice = document.getElementById("totalPrice");
+
+                const itemValue = itemInput.value;
+                const priceValue = priceInput.value;
+                const countValue = countInput.value;
+
+                const totalPriceResult = priceValue * countValue;
+                const listItem = document.createElement("li"); 
+                listItem.textContent = `${itemValue} |가격: ${priceValue}원 x ${countValue} = ${totalPriceResult}원`;
+                itemList.appendChild(listItem);
+                total+= totalPriceResult;
+                totalPrice.textContent = total;
+
+                itemInput.value = "";
+                priceInput.value = "0";
+                countInput.value = "1";
+
+
+            }
+
+        </script>
+    </body>
+</html>
